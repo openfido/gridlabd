@@ -20,15 +20,15 @@ set -u # nounset enabled
 if [ ! -f "/usr/local/bin/gridlabd" ]; then
     echo "ERROR [openfido.sh]: '/usr/local/bin/gridlabd' not found" > /dev/stderr
     error
-elif [ ! -f "$OPENFIDO_INPUT/config.csv" ]; then
-    echo "ERROR [openfido.sh]: '$OPENFIDO_INPUT/gridlabd.sh' not found" > /dev/stderr
+elif [ ! -f "$OPENFIDO_INPUT/gridlabd.rc" ]; then
+    echo "ERROR [openfido.sh]: '$OPENFIDO_INPUT/gridlabd.rc' not found" > /dev/stderr
     error
 fi
 
 echo '*** INPUTS ***'
 ls -l $OPENFIDO_INPUT
 
-sh -c gridlabd.sh || error
+(cd $OPENFIDO_INPUT; gridlabd $(tr '\n' ' ' < gridlabd.rc) ; cp -R . $OPENFIDO_OUTPUT) || error
 
 echo '*** OUTPUTS ***'
 ls -l $OPENFIDO_OUTPUT

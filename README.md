@@ -20,13 +20,23 @@ Recommended pipeline settings:
 INPUTS
 ------
 
-The gridlabd run file `gridlabd.sh` must be upload. This file may contain any valid shell commands, but should include at least one call to gridlabd, e.g., using the syntax
+The gridlabd run file `gridlabd.rc` must be uploaded. The format of the RC file is one line per
+gridlabd command option, e.g., the command `gridlabd --verbose model.glm` should be entered as
 
 ~~~
-gridlabd [OPTIONS] model.glm
+--verbose
+model.glm
 ~~~
 
-Any other files references by the run file, or by any file contained in the run file must be uploaded as well.
+Options may be provided together, e.g., `gridlabd -D csv_load_options="-f config" config.csv network.glm equipment.glm` should be entered as
+
+~~~
+-D csv_load_options="-f config"
+config.csv
+network.glm equipment.glm
+~~~
+
+All files referenced by the RC file, or by any file contained in the RC file must be uploaded as well.
 
 OUTPUTS
 -------
