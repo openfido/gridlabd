@@ -46,6 +46,15 @@ All files at the end of the run will be copied to the output folder, including t
 CAVEATS
 -------
 
-1. A number of `gridlabd` capabilities require credentials.  These may not work unless the credentials are uploaded to the input files.
+1. Unlike most OpenFIDO pipelines, this pipeline runs in the input folder.
 
-2. Unlike most OpenFIDO pipelines, this pipeline runs in the input folder.
+2. All normal output is copied to `stdout` and errors to `stderr`.  If you wish to capture the output stream is file, add the desired `--redirect` options in `gridlabd.rc`, e.g.,
+
+~~~
+--redirect all
+~~~
+
+to redirect all output to files names `gridlabd.*`.
+
+3. A number of `gridlabd` capabilities require credentials.  These may not work unless the credentials are uploaded to the input files.
+
