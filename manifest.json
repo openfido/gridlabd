@@ -9,22 +9,22 @@
   },
   "gridlabd" : {
     "GLOBALS" : {
-      "Define all global variables, if any (e.g., -D name=value)",
+      "description" : "Define all global variables, if any (e.g., -D name=value)",
       "prompt" : "Globals",
       "default" : "-D example=value"
     },
     "CONFIGCSV" : {
-      "List configuration CSV files uploaded, if any (e.g., config.csv)",
+      "description" : "List configuration CSV files uploaded, if any (e.g., config.csv)",
       "prompt" : "Config CSV",
       "default" : "*.csv"
     },
     "MODELS" : {
-      "List model files uploaded, if any (e.g., model.glm)",
+      "description" : "List model files uploaded, if any (e.g., model.glm)",
       "prompt" : "Model GLM",
       "default" : "*.glm"
     },
     "TEMPLATE" : {
-      "List analysis template, if any (e.g., -t template.glm). See https://template.gridlabd.us/README.md.",
+      "description" : "List analysis template, if any (e.g., -t template.glm). See https://template.gridlabd.us/README.md.",
       "prompt" : "Analysis template",
       "default" : "-t template-name"
     }
