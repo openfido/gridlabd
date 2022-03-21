@@ -28,7 +28,9 @@ fi
 echo '*** INPUTS ***'
 ls -l $OPENFIDO_INPUT
 
-(cd $OPENFIDO_INPUT; gridlabd $(tr '\n' ' ' < gridlabd.rc) ; cp -R . $OPENFIDO_OUTPUT) || error
+cd $OPENFIDO_INPUT
+gridlabd $(tr '\n' ' ' < gridlabd.rc)
+cp -R . $OPENFIDO_OUTPUT) 
 
 echo '*** OUTPUTS ***'
 ls -l $OPENFIDO_OUTPUT
