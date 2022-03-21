@@ -1,4 +1,5 @@
 {
+  "name" : "GridLAB-D Simulator",
   "description" : "HiPAS GridLAB-D processing pipeline",
   "docker" : "slacgismo/gridlabd:latest",
   "git" : "https://github.com/openfido/gridlabd.git",
