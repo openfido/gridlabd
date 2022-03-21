@@ -28,4 +28,5 @@
       "prompt" : "Analysis template",
       "default" : "-t template-name"
     }
+  }
 }
