@@ -7,7 +7,7 @@ error()
 {
     echo '*** ABNORMAL TERMINATION ***'
     echo 'See error Console Output stderr for details.'
-    echo "See https://github.com/openfido/loadshape for help"
+    echo "See https://pipeline.github.com/openfido/gridlabd for help"
     exit 1
 }
 
@@ -30,7 +30,7 @@ ls -l $OPENFIDO_INPUT
 
 cd $OPENFIDO_INPUT
 gridlabd $(tr '\n' ' ' < gridlabd.rc) || error
-cp -R . $OPENFIDO_OUTPUT) 
+cp -R . $OPENFIDO_OUTPUT
 
 echo '*** OUTPUTS ***'
 ls -l $OPENFIDO_OUTPUT
