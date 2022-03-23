@@ -27,10 +27,14 @@ fi
 
 echo '*** INPUTS ***'
 ls -l $OPENFIDO_INPUT
+FILES=$(cd $OPENFIDO_INPUT; ls)
 
 cd $OPENFIDO_INPUT
 gridlabd $(tr '\n' ' ' < gridlabd.rc) || error
 cp -R . $OPENFIDO_OUTPUT
+for FILE in $FILES; do
+    diff -q $OPENFIDO_INPUT/$FILE $OPENFIDO_OUTPUT/$FILE >/dev/null && rm $OPENFIDO_OUTPUT/$FILE
+done
 
 echo '*** OUTPUTS ***'
 ls -l $OPENFIDO_OUTPUT
